@@ -17,12 +17,30 @@ class SortedList {
     this.length = sortItem.length
   }
   get(pos) {
+    if(this.items[pos] === undefined){
+      throw new Error('OutOfBounds');
+    }else{
+      return this.items[pos]
+
+    }
 
   }
 
-  max() {}
+  max() {
+    if(this.items.length === 0){
+      throw new Error('EmptySortedList');
+    }else{
+      return Math.max.apply(null, this.items)
+    }
+  }
 
-  min() {}
+  min() {
+    if(this.items.length === 0){
+      throw new Error('EmptySortedList');
+    }else{
+      return Math.min.apply(null, this.items)
+    }
+  }
 
   sum() {}
 
